@@ -1,0 +1,478 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3 mx-auto">
+      <form [formGroup]="createParam2" (submit)="Save()" #formDir="ngForm">
+        <div class="form-group">
+          <label for="energy" class="control-label">energy</label>
+          <input
+            id="energy"
+            formControlName="energy"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="energy.invalid" class="alert alert-danger">
+            <div *ngIf="energy.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ponderation_volume" class="control-label"
+            >ponderation_volume</label
+          >
+          <input
+            id="ponderation_volume"
+            formControlName="ponderation_volume"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="ponderation_volume.invalid" class="alert alert-danger">
+            <div *ngIf="ponderation_volume.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ponderation_volume_inter" class="control-label"
+            >ponderation_volume_inter</label
+          >
+          <input
+            id="ponderation_volume_inter"
+            formControlName="ponderation_volume_inter"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div
+            *ngIf="ponderation_volume_inter.invalid"
+            class="alert alert-danger"
+          >
+            <div *ngIf="ponderation_volume_inter.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ponderation_difference_ext" class="control-label"
+            >ponderation_difference_ext</label
+          >
+          <input
+            id="ponderation_difference_ext"
+            formControlName="ponderation_difference_ext"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div
+            *ngIf="ponderation_difference_ext.invalid"
+            class="alert alert-danger"
+          >
+            <div *ngIf="ponderation_difference_ext.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="l1min" class="control-label">l1min</label>
+          <input
+            id="l1min"
+            formControlName="l1min"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="l1min.invalid" class="alert alert-danger">
+            <div *ngIf="l1min.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="l1max" class="control-label">l1max</label>
+          <input
+            id="l1max"
+            formControlName="l1max"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="l1max.invalid" class="alert alert-danger">
+            <div *ngIf="l1max.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="l2min" class="control-label">l2min</label>
+          <input
+            id="l2min"
+            formControlName="l2min"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="l2min.invalid" class="alert alert-danger">
+            <div *ngIf="l2min.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="l2max" class="control-label">l2max</label>
+          <input
+            id="l2max"
+            formControlName="l2max"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="l2max.invalid" class="alert alert-danger">
+            <div *ngIf="l2max.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="h1min" class="control-label">h1min</label>
+          <input
+            id="h1min"
+            formControlName="h1min"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="h1min.invalid" class="alert alert-danger">
+            <div *ngIf="h1min.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="h1max" class="control-label">h1max</label>
+          <input
+            id="h1max"
+            formControlName="h1max"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="h1max.invalid" class="alert alert-danger">
+            <div *ngIf="h1max.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="h2min" class="control-label">h2min</label>
+          <input
+            id="h2min"
+            formControlName="h2min"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="h2min.invalid" class="alert alert-danger">
+            <div *ngIf="h2min.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="h2max" class="control-label">h2max</label>
+          <input
+            id="h2max"
+            formControlName="h2max"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="h2max.invalid" class="alert alert-danger">
+            <div *ngIf="h2max.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="heightToTopMin" class="control-label"
+            >heightToTopMin</label
+          >
+          <input
+            id="heightToTopMin"
+            formControlName="heightToTopMin"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="heightToTopMin.invalid" class="alert alert-danger">
+            <div *ngIf="heightToTopMin.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="heightToTopMax" class="control-label"
+            >heightToTopMax</label
+          >
+          <input
+            id="heightToTopMax"
+            formControlName="heightToTopMax"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="heightToTopMax.invalid" class="alert alert-danger">
+            <div *ngIf="heightToTopMax.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="heightTogutterMin" class="control-label"
+            >heightTogutterMin</label
+          >
+          <input
+            id="heightTogutterMin"
+            formControlName="heightTogutterMin"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="heightTogutterMin.invalid" class="alert alert-danger">
+            <div *ngIf="heightTogutterMin.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="heightTogutterMax" class="control-label"
+            >heightTogutterMax</label
+          >
+          <input
+            id="heightTogutterMax"
+            formControlName="heightTogutterMax"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="heightTogutterMax.invalid" class="alert alert-danger">
+            <div *ngIf="heightTogutterMax.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="shiftMin" class="control-label">shiftMin</label>
+          <input
+            id="shiftMin"
+            formControlName="shiftMin"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="shiftMin.invalid" class="alert alert-danger">
+            <div *ngIf="shiftMin.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="shiftMax" class="control-label">shiftMax</label>
+          <input
+            id="shiftMax"
+            formControlName="shiftMax"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="shiftMax.invalid" class="alert alert-danger">
+            <div *ngIf="shiftMax.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="temp" class="control-label">temp</label>
+          <input
+            id="temp"
+            formControlName="temp"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="temp.invalid" class="alert alert-danger">
+            <div *ngIf="temp.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="decoef" class="control-label">decoef</label>
+          <input
+            id="decoef"
+            formControlName="decoef"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="decoef.invalid" class="alert alert-danger">
+            <div *ngIf="decoef.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="poisson" class="control-label">poisson</label>
+          <input
+            id="poisson"
+            formControlName="poisson"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="poisson.invalid" class="alert alert-danger">
+            <div *ngIf="poisson.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pbirth" class="control-label">pbirth</label>
+          <input
+            id="pbirth"
+            formControlName="pbirth"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="pbirth.invalid" class="alert alert-danger">
+            <div *ngIf="pbirth.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pdeath" class="control-label">pdeath</label>
+          <input
+            id="pdeath"
+            formControlName="pdeath"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="pdeath.invalid" class="alert alert-danger">
+            <div *ngIf="pdeath.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="end_test_type" class="control-label">end_test_type</label>
+          <input
+            id="end_test_type"
+            formControlName="end_test_type"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="end_test_type.invalid" class="alert alert-danger">
+            <div *ngIf="end_test_type.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="delta" class="control-label">delta</label>
+          <input
+            id="delta"
+            formControlName="delta"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="delta.invalid" class="alert alert-danger">
+            <div *ngIf="delta.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="relativenbiter" class="control-label"
+            >relativenbiter</label
+          >
+          <input
+            id="relativenbiter"
+            formControlName="relativenbiter"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="relativenbiter.invalid" class="alert alert-danger">
+            <div *ngIf="relativenbiter.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="relative_nb_iter" class="control-label"
+            >relative_nb_iter</label
+          >
+          <input
+            id="relative_nb_iter"
+            formControlName="relative_nb_iter"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="relative_nb_iter.invalid" class="alert alert-danger">
+            <div *ngIf="relative_nb_iter.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="absolute_nb_iter" class="control-label"
+            >absolute_nb_iter</label
+          >
+          <input
+            id="absolute_nb_iter"
+            formControlName="absolute_nb_iter"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="absolute_nb_iter.invalid" class="alert alert-danger">
+            <div *ngIf="absolute_nb_iter.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="result" class="control-label">result</label>
+          <input
+            id="result"
+            formControlName="result"
+            class="form-control"
+            type="datetime-local"
+            required
+          />
+          <div *ngIf="result.invalid" class="alert alert-danger">
+            <div *ngIf="result.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary" />
+        </div>
+      </form>
+    </div>
+  </div>
+  <div style="text-align: center">
+    <a [routerLink]="['/jobs']">Retour aux jobs</a>
+  </div>
+  <div class="alert alert-danger" *ngIf="hasError">
+    {{ errorMessage }}
+  </div>
+</div>
