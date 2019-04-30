@@ -85,7 +85,9 @@ export class JobCreateComponent implements OnInit {
         message: ''
       })
       .subscribe(result => {
-      this.createJob.controls.parametres.setValue(result);
+        if (result) {
+          this.createJob.controls.parametres.setValue(result);
+        }
       });
 
     }
