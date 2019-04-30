@@ -16,7 +16,6 @@ export class Formulaire2Component implements OnInit {
   errorMessage: string;
   formulaire2 = new Formulaire2();
 
-
   constructor(fb: FormBuilder) {
     this.form = fb.group({
       energy: ['', Validators.required],
@@ -60,50 +59,112 @@ export class Formulaire2Component implements OnInit {
     });
   }
 
-  get energy() {return this.form.get('energy'); }
-  get ponderation_volume() {return this.form.get('ponderation_volume'); }
-  get ponderation_volume_inter() {return this.form.get('ponderation_volume_inter'); }
-  get ponderation_difference_ext() {return this.form.get('ponderation_difference_ext'); }
+  get energy() {
+    return this.form.get('energy');
+  }
+  get ponderation_volume() {
+    return this.form.get('ponderation_volume');
+  }
+  get ponderation_volume_inter() {
+    return this.form.get('ponderation_volume_inter');
+  }
+  get ponderation_difference_ext() {
+    return this.form.get('ponderation_difference_ext');
+  }
 
-  get l1min() {return this.form.get('l1min'); }
-  get l1max() {return this.form.get('l1max'); }
+  get l1min() {
+    return this.form.get('l1min');
+  }
+  get l1max() {
+    return this.form.get('l1max');
+  }
 
-  get l2min() {return this.form.get('l2min'); }
-  get l2max() {return this.form.get('l2max'); }
+  get l2min() {
+    return this.form.get('l2min');
+  }
+  get l2max() {
+    return this.form.get('l2max');
+  }
 
-  get h1min() {return this.form.get('h1min'); }
-  get h1max() {return this.form.get('h1max'); }
+  get h1min() {
+    return this.form.get('h1min');
+  }
+  get h1max() {
+    return this.form.get('h1max');
+  }
 
-  get h2min() {return this.form.get('h2min'); }
-  get h2max() {return this.form.get('h2max'); }
+  get h2min() {
+    return this.form.get('h2min');
+  }
+  get h2max() {
+    return this.form.get('h2max');
+  }
 
-  get heightToTopMin() {return this.form.get('heightToTopMin'); }
-  get heightToTopgMax() {return this.form.get('heightToTopgMax'); }
+  get heightToTopMin() {
+    return this.form.get('heightToTopMin');
+  }
+  get heightToTopgMax() {
+    return this.form.get('heightToTopgMax');
+  }
 
-  get heightgutterMin() {return this.form.get('heightgutterMin'); }
-  get heightgutterMax() {return this.form.get('heightgutterMax'); }
+  get heightgutterMin() {
+    return this.form.get('heightgutterMin');
+  }
+  get heightgutterMax() {
+    return this.form.get('heightgutterMax');
+  }
 
-  get shiftMin() {return this.form.get('shiftMin'); }
-  get shiftMax() {return this.form.get('shiftMax'); }
+  get shiftMin() {
+    return this.form.get('shiftMin');
+  }
+  get shiftMax() {
+    return this.form.get('shiftMax');
+  }
 
-  get temp() {return this.form.get('temp'); }
-  get deccoef() {return this.form.get('deccoef'); }
-  get poisson() {return this.form.get('poisson'); }
-  get pbirth() {return this.form.get('pbirth'); }
-  get pdeath() {return this.form.get('pdeath'); }
+  get temp() {
+    return this.form.get('temp');
+  }
+  get deccoef() {
+    return this.form.get('deccoef');
+  }
+  get poisson() {
+    return this.form.get('poisson');
+  }
+  get pbirth() {
+    return this.form.get('pbirth');
+  }
+  get pdeath() {
+    return this.form.get('pdeath');
+  }
 
-  get end_test_type() {return this.form.get('end_test_type'); }
-  get delta() {return this.form.get('delta'); }
-  get relative_nb_iter() {return this.form.get('relative_nb_iter'); }
-  get absolute_nb_iter() {return this.form.get('absolute_nb_iter'); }
+  get end_test_type() {
+    return this.form.get('end_test_type');
+  }
+  get delta() {
+    return this.form.get('delta');
+  }
+  get relative_nb_iter() {
+    return this.form.get('relative_nb_iter');
+  }
+  get absolute_nb_iter() {
+    return this.form.get('absolute_nb_iter');
+  }
 
-  get result() {return this.form.get('result'); }
+  get result() {
+    return this.form.get('result');
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.parametre) {
+      this.formulaire2 = JSON.parse(this.parametre);
+      this.form.patchValue(this.formulaire2);
+    }
+  }
 
   save() {
     if (this.form.valid) {
       const newFormulaire2 = new Formulaire2();
+      newFormulaire2.energy = this.form.value.energy;
       newFormulaire2.ponderation_volume = this.form.value.ponderation_volume;
       newFormulaire2.ponderation_volume_inter = this.form.value.ponderation_volume_inter;
       newFormulaire2.ponderation_difference_ext = this.form.value.ponderation_difference_ext;
@@ -116,9 +177,9 @@ export class Formulaire2Component implements OnInit {
       newFormulaire2.h2min = this.form.value.h2min;
       newFormulaire2.h2max = this.form.value.h2max;
       newFormulaire2.heightToTopMin = this.form.value.heightToTopMin;
-      newFormulaire2.heightToTopMax = this.form.value.heightToTopMax;
+      newFormulaire2.heightToTopgMax = this.form.value.heightToTopgMax;
       newFormulaire2.heightgutterMin = this.form.value.heightgutterMin;
-      newFormulaire2.geightgutterMax = this.form.value.geightgutterMax;
+      newFormulaire2.heightgutterMax = this.form.value.heightgutterMax;
       newFormulaire2.shiftMin = this.form.value.shiftMin;
       newFormulaire2.shiftMax = this.form.value.shiftMax;
       newFormulaire2.temp = this.form.value.temp;

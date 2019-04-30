@@ -18,10 +18,10 @@ export class Formulaire2 {
   h2max: string;
 
   heightToTopMin: string;
-  heightToTopMax: string;
+  heightToTopgMax: string;
 
   heightgutterMin: string;
-  geightgutterMax: string;
+  heightgutterMax: string;
 
   shiftMin: string;
   shiftMax: string;
