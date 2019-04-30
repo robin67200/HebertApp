@@ -1,8 +1,9 @@
 import { Formulaire1 } from './../../models/formulaire1';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { JobsService } from '../../services/jobs.service';
+import { send } from 'q';
 
 @Component({
   selector: 'app-formulaire1',
@@ -10,6 +11,9 @@ import { JobsService } from '../../services/jobs.service';
   styleUrls: ['./formulaire1.component.css']
 })
 export class Formulaire1Component implements OnInit {
+
+  @Output() sent = new EventEmitter<string>();
+
   hasError = false;
   errorMessage: string;
   newForm1: FormGroup;
@@ -20,7 +24,7 @@ export class Formulaire1Component implements OnInit {
     fb: FormBuilder,
     private router: Router,
     private service: JobsService
-    ) { 
+    ) {
       this.newForm1 = fb.group({
         energy: ['', Validators.required],
         ponderation_volume: ['', Validators.required],
@@ -79,7 +83,7 @@ export class Formulaire1Component implements OnInit {
   }
 
   Save() {
-    if(this.newForm1.valid) {
+    if (this.newForm1.valid) {
       const newFormulaire1 = new Formulaire1('', '', '', '', '', '', '', '', '', '', '', '',
       '', '', '', '', '', '', '', '', '', '', '', '');
       newFormulaire1.energy = this.newForm1.value.energy;
@@ -106,7 +110,12 @@ export class Formulaire1Component implements OnInit {
       newFormulaire1.relative_nb_iter = this.newForm1.value.relative_nb_iter;
       newFormulaire1.absolute_nb_iter = this.newForm1.value.absolute_nb_iter;
       newFormulaire1.result = this.newForm1.value.result;
-      this.newForm1
+
+
+      const json = JSON.stringify(newFormulaire1);
+      this.sent.emit(json);
+    } else {
+      this.hasError = true;
     }
   }
 

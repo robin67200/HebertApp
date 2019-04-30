@@ -1,9 +1,10 @@
+import { SimpleModalService } from 'ngx-simple-modal';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Job } from '../models/job';
-import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { JobsService } from '../services/jobs.service';
+import { ModalsFormsComponent } from '../parametres/modalsForms/modalsForms.component';
 
 @Component({
   selector: 'app-job-create',
@@ -21,6 +22,7 @@ export class JobCreateComponent implements OnInit {
     fb: FormBuilder,
     private router: Router,
     private service: JobsService,
+    private modals: SimpleModalService
   ) {
     this.createJob = fb.group({
       dateDebut: new FormControl(this.job.dateDebut, [
@@ -75,5 +77,17 @@ export class JobCreateComponent implements OnInit {
       this.errorMessage = 'Formulaire incomplet: Tous les champs (sauf parametres), sont obligatoires';
     }
   }
+
+  addParametres() {
+    this.modals
+      .addModal(ModalsFormsComponent, {
+        title: 'formulaire paramètres',
+        message: ''
+      })
+      .subscribe(result => {
+      this.createJob.controls.parametres.setValue(result);
+      });
+
+    }
   }
 

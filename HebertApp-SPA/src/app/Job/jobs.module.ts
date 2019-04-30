@@ -1,3 +1,4 @@
+
 import { ModalsComponent } from './modals/modals.component';
 import { JobsService } from './services/jobs.service';
 import { JobCreateComponent } from './job-create/job-create.component';
@@ -11,6 +12,7 @@ import { JobsRoutingModule } from './jobs.routing';
 import { SimpleModalModule, SimpleModalService } from 'ngx-simple-modal';
 import { Formulaire2Component } from './parametres/formulaire2/formulaire2.component';
 import { Formulaire1Component } from './parametres/formulaire1/formulaire1.component';
+import { ModalsFormsComponent } from './parametres/modalsForms/modalsForms.component';
 
 @NgModule({
     imports: [
@@ -36,8 +38,9 @@ import { Formulaire1Component } from './parametres/formulaire1/formulaire1.compo
         JobListComponent,
         ModalsComponent,
         Formulaire2Component,
-        Formulaire1Component
+        Formulaire1Component,
+        ModalsFormsComponent
     ],
-    providers: [JobsService, SimpleModalService], entryComponents: [ModalsComponent]
+    providers: [JobsService, SimpleModalService], entryComponents: [ModalsComponent, ModalsFormsComponent]
 })
 export class JobsModule {}

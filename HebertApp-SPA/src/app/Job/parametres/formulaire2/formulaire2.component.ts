@@ -29,10 +29,10 @@ export class Formulaire2Component implements OnInit {
       h2max: ['', Validators.required],
 
       heightToTopMin: ['', Validators.required],
-      heightToTopMax: ['', Validators.required],
+      heightToTopgMax: ['', Validators.required],
 
       heightgutterMin: ['', Validators.required],
-      geightgutterMax: ['', Validators.required],
+      heightgutterMax: ['', Validators.required],
 
       shiftMin: ['', Validators.required],
       shiftMax: ['', Validators.required],
@@ -70,7 +70,7 @@ export class Formulaire2Component implements OnInit {
   get h2max() {return this.form.get('h2max'); }
 
   get heightToTopMin() {return this.form.get('heightToTopMin'); }
-  get heightTotopMax() {return this.form.get('heightTotopMax'); }
+  get heightToTopgMax() {return this.form.get('heightToTopgMax'); }
 
   get heightgutterMin() {return this.form.get('heightgutterMin'); }
   get heightgutterMax() {return this.form.get('heightgutterMax'); }
@@ -84,10 +84,10 @@ export class Formulaire2Component implements OnInit {
   get pbirth() {return this.form.get('pbirth'); }
   get pdeath() {return this.form.get('pdeath'); }
 
-  get end_testtype() {return this.form.get('end_testtype'); }
+  get end_test_type() {return this.form.get('end_test_type'); }
   get delta() {return this.form.get('delta'); }
   get relative_nb_iter() {return this.form.get('relative_nb_iter'); }
-  get absolute_nbiter() {return this.form.get('absolute_nbiter'); }
+  get absolute_nb_iter() {return this.form.get('absolute_nb_iter'); }
 
   get result() {return this.form.get('result'); }
 

@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-3 mx-auto">
-      <form [formGroup]="createParam2" (submit)="Save()" #formDir="ngForm">
+      <form [formGroup]="form" (submit)="save()" #formDir="ngForm">
         <div class="form-group">
           <label for="energy" class="control-label">energy</label>
           <input
             id="energy"
             formControlName="energy"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="energy.invalid" class="alert alert-danger">
@@ -25,7 +25,7 @@
             id="ponderation_volume"
             formControlName="ponderation_volume"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="ponderation_volume.invalid" class="alert alert-danger">
@@ -42,7 +42,7 @@
             id="ponderation_volume_inter"
             formControlName="ponderation_volume_inter"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div
@@ -62,7 +62,7 @@
             id="ponderation_difference_ext"
             formControlName="ponderation_difference_ext"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div
@@ -80,7 +80,7 @@
             id="l1min"
             formControlName="l1min"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="l1min.invalid" class="alert alert-danger">
@@ -95,7 +95,7 @@
             id="l1max"
             formControlName="l1max"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="l1max.invalid" class="alert alert-danger">
@@ -110,7 +110,7 @@
             id="l2min"
             formControlName="l2min"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="l2min.invalid" class="alert alert-danger">
@@ -125,7 +125,7 @@
             id="l2max"
             formControlName="l2max"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="l2max.invalid" class="alert alert-danger">
@@ -140,7 +140,7 @@
             id="h1min"
             formControlName="h1min"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="h1min.invalid" class="alert alert-danger">
@@ -155,7 +155,7 @@
             id="h1max"
             formControlName="h1max"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="h1max.invalid" class="alert alert-danger">
@@ -170,7 +170,7 @@
             id="h2min"
             formControlName="h2min"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="h2min.invalid" class="alert alert-danger">
@@ -185,7 +185,7 @@
             id="h2max"
             formControlName="h2max"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="h2max.invalid" class="alert alert-danger">
@@ -202,7 +202,7 @@
             id="heightToTopMin"
             formControlName="heightToTopMin"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="heightToTopMin.invalid" class="alert alert-danger">
@@ -212,52 +212,52 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="heightToTopMax" class="control-label"
-            >heightToTopMax</label
+          <label for="heightToTopgMax" class="control-label"
+            >heightToTopgMax</label
           >
           <input
-            id="heightToTopMax"
-            formControlName="heightToTopMax"
+            id="heightToTopgMax"
+            formControlName="heightToTopgMax"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
-          <div *ngIf="heightToTopMax.invalid" class="alert alert-danger">
-            <div *ngIf="heightToTopMax.errors">
+          <div *ngIf="heightToTopgMax.invalid" class="alert alert-danger">
+            <div *ngIf="heightToTopgMax.errors">
               Champ obligatoire
             </div>
           </div>
         </div>
         <div class="form-group">
-          <label for="heightTogutterMin" class="control-label"
-            >heightTogutterMin</label
+          <label for="heightgutterMin" class="control-label"
+            >heightgutterMin</label
           >
           <input
-            id="heightTogutterMin"
-            formControlName="heightTogutterMin"
+            id="heightgutterMin"
+            formControlName="heightgutterMin"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
-          <div *ngIf="heightTogutterMin.invalid" class="alert alert-danger">
-            <div *ngIf="heightTogutterMin.errors">
+          <div *ngIf="heightgutterMin.invalid" class="alert alert-danger">
+            <div *ngIf="heightgutterMin.errors">
               Champ obligatoire
             </div>
           </div>
         </div>
         <div class="form-group">
-          <label for="heightTogutterMax" class="control-label"
-            >heightTogutterMax</label
+          <label for="heightgutterMax" class="control-label"
+            >heightgutterMax</label
           >
           <input
-            id="heightTogutterMax"
-            formControlName="heightTogutterMax"
+            id="heightgutterMax"
+            formControlName="heightgutterMax"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
-          <div *ngIf="heightTogutterMax.invalid" class="alert alert-danger">
-            <div *ngIf="heightTogutterMax.errors">
+          <div *ngIf="heightgutterMax.invalid" class="alert alert-danger">
+            <div *ngIf="heightgutterMax.errors">
               Champ obligatoire
             </div>
           </div>
@@ -268,7 +268,7 @@
             id="shiftMin"
             formControlName="shiftMin"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="shiftMin.invalid" class="alert alert-danger">
@@ -283,7 +283,7 @@
             id="shiftMax"
             formControlName="shiftMax"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="shiftMax.invalid" class="alert alert-danger">
@@ -298,7 +298,7 @@
             id="temp"
             formControlName="temp"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="temp.invalid" class="alert alert-danger">
@@ -308,16 +308,16 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="decoef" class="control-label">decoef</label>
+          <label for="deccoef" class="control-label">deccoef</label>
           <input
-            id="decoef"
-            formControlName="decoef"
+            id="deccoef"
+            formControlName="deccoef"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
-          <div *ngIf="decoef.invalid" class="alert alert-danger">
-            <div *ngIf="decoef.errors">
+          <div *ngIf="deccoef.invalid" class="alert alert-danger">
+            <div *ngIf="deccoef.errors">
               Champ obligatoire
             </div>
           </div>
@@ -328,7 +328,7 @@
             id="poisson"
             formControlName="poisson"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="poisson.invalid" class="alert alert-danger">
@@ -343,7 +343,7 @@
             id="pbirth"
             formControlName="pbirth"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="pbirth.invalid" class="alert alert-danger">
@@ -358,7 +358,7 @@
             id="pdeath"
             formControlName="pdeath"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="pdeath.invalid" class="alert alert-danger">
@@ -373,7 +373,7 @@
             id="end_test_type"
             formControlName="end_test_type"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="end_test_type.invalid" class="alert alert-danger">
@@ -388,28 +388,11 @@
             id="delta"
             formControlName="delta"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="delta.invalid" class="alert alert-danger">
             <div *ngIf="delta.errors">
-              Champ obligatoire
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="relativenbiter" class="control-label"
-            >relativenbiter</label
-          >
-          <input
-            id="relativenbiter"
-            formControlName="relativenbiter"
-            class="form-control"
-            type="datetime-local"
-            required
-          />
-          <div *ngIf="relativenbiter.invalid" class="alert alert-danger">
-            <div *ngIf="relativenbiter.errors">
               Champ obligatoire
             </div>
           </div>
@@ -422,7 +405,7 @@
             id="relative_nb_iter"
             formControlName="relative_nb_iter"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="relative_nb_iter.invalid" class="alert alert-danger">
@@ -439,7 +422,7 @@
             id="absolute_nb_iter"
             formControlName="absolute_nb_iter"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="absolute_nb_iter.invalid" class="alert alert-danger">
@@ -454,7 +437,7 @@
             id="result"
             formControlName="result"
             class="form-control"
-            type="datetime-local"
+            type="text"
             required
           />
           <div *ngIf="result.invalid" class="alert alert-danger">
