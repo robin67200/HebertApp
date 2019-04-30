@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./formulaire2.component.css']
 })
 export class Formulaire2Component implements OnInit {
+  @Input() parametre: string;
   form: FormGroup;
 
   constructor(fb: FormBuilder) {

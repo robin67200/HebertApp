@@ -1,9 +1,11 @@
+import { SimpleModalService } from 'ngx-simple-modal';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Job } from '../models/job';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { JobsService } from '../services/jobs.service';
+import { ModalsFormsComponent } from '../parametres/modalsForms/modalsForms.component';
 
 @Component({
   selector: 'app-job-edit',
@@ -23,7 +25,8 @@ export class JobEditComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     route: ActivatedRoute,
-    private service: JobsService
+    private service: JobsService,
+    private modals: SimpleModalService,
   ) {
     this.editJobs = fb.group({
       dateDebut: new FormControl(this.job.dateDebut, [
@@ -85,5 +88,19 @@ export class JobEditComponent implements OnInit {
       this.errorMessage = 'Formulaire incomplet: Tous les champs (sauf parametres), sont obligatoires';
     }
   }
+
+  editParametres() {
+    this.modals
+      .addModal(ModalsFormsComponent, {
+        title: 'formulaire paramètres',
+        parametre: this.editJobs.value.parametres
+      })
+      .subscribe(result => {
+        if (result) {
+          this.editJobs.controls.parametres.setValue(result);
+        }
+      });
+
+    }
 
 }

@@ -12,6 +12,7 @@ import { send } from 'q';
 })
 export class Formulaire1Component implements OnInit {
 
+  @Input() parametre: string;
   @Output() sent = new EventEmitter<string>();
 
   hasError = false;
@@ -80,6 +81,8 @@ export class Formulaire1Component implements OnInit {
      get result() {return this.newForm1.get('result'); }
 
   ngOnInit() {
+    this.formulaire1 = JSON.parse(this.parametre);
+    this.newForm1.patchValue(this.formulaire1);
   }
 
   Save() {

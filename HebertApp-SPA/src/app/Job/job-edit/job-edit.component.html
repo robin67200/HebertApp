@@ -33,8 +33,8 @@
             </div>
             <div class="form-group">
                 <label for="parametres" class="control-label">Paramètres</label>
-                <input id="parametres" formControlName="parametres" class="form-control" type="text">
-            </div> 
+                <input id="parametres" formControlName="parametres" class="form-control" type="text"(click)="editParametres()" >
+            </div>
               <div class="form-group">
                   <label for="statut" class="control-label">Statut</label>
                   <input id="statut" formControlName="statut" class="form-control" type="text" required>
@@ -43,7 +43,7 @@
                       Champ obligatoire
                     </div>
                   </div>
-              </div> 
+              </div>
               <div class="form-group">
                     <label for="chemin" class="control-label">Chemin</label>
                     <input id="chemin" formControlName="chemin" class="form-control" type="text" required>
@@ -52,7 +52,7 @@
                         Champ obligatoire
                       </div>
                     </div>
-              </div> 
+              </div>
               <div class="form-group">
                   <label for="shp" class="control-label">SHP</label>
                   <input id="shp" formControlName="shp" class="form-control" type="text" required>
@@ -61,12 +61,12 @@
                       Champ obligatoire
                     </div>
                   </div>
-              </div> 
+              </div>
 
               <div class="form-group">
                   <input type="submit" class="btn btn-primary" />
               </div>
-               
+
       </form>
     </div>
   </div>

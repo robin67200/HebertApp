@@ -82,7 +82,7 @@ export class JobCreateComponent implements OnInit {
     this.modals
       .addModal(ModalsFormsComponent, {
         title: 'formulaire paramètres',
-        message: ''
+        parametre: ''
       })
       .subscribe(result => {
         if (result) {

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SimpleModalComponent } from 'ngx-simple-modal';
 export interface JobModel {
   title: string;
-  message: string;
+  parametre: string;
 }
 
 @Component({
@@ -29,10 +29,12 @@ export interface JobModel {
         </button>
         <app-formulaire1
           *ngIf="form == 1"
+          [parametre]="parametre"
           (sent)="confirm($event)"
         ></app-formulaire1>
         <app-formulaire2
           *ngIf="form == 2"
+          [parametre]="parametre"
           (sent)="confirm($event)"
         ></app-formulaire2>
       </div>
@@ -46,7 +48,7 @@ export interface JobModel {
 })
 export class ModalsFormsComponent extends SimpleModalComponent<JobModel, string>
   implements JobModel {
-  message: string;
+  parametre: string;
   title: string;
 
   form = 0;
