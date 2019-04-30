@@ -9,6 +9,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { JobsRoutingModule } from './jobs.routing';
 import { SimpleModalModule, SimpleModalService } from 'ngx-simple-modal';
+import { Formulaire1Component } from './parametres/formulaire1/formulaire1.component';
 
 @NgModule({
     imports: [
@@ -32,7 +33,8 @@ import { SimpleModalModule, SimpleModalService } from 'ngx-simple-modal';
         JobDetailsComponent,
         JobEditComponent,
         JobListComponent,
-        ModalsComponent
+        ModalsComponent,
+        Formulaire1Component
     ],
     providers: [JobsService, SimpleModalService], entryComponents: [ModalsComponent]
 })

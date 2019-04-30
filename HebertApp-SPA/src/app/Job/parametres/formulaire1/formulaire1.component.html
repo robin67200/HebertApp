@@ -1,3 +1,229 @@
-<p>
-  formulaire1 works!
-</p>
+<div class="container">
+  <h2 style="text-align: center">Formulaire 1</h2>
+  <hr />
+  <div class="row">
+    <div class="col-3 mx-auto">
+      <form [formGroup]="newForm1" (submit)="Save()" #formDir="ngForm">
+        <div class="form-group">
+          <label for="energy" class="control-label">energy</label>
+          <input id="energy" formControlName="energy" class="form-control" type="text" required>
+          <div *ngIf="energy.invalid" class="alert alert-danger">
+            <div *ngIf="energy.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ponderation_volume" class="control-label">ponderation_volume</label>
+          <input id="ponderation_volume" formControlName="ponderation_volume" class="form-control" type="text" required>
+          <div *ngIf="ponderation_volume.invalid" class="alert alert-danger">
+            <div *ngIf="ponderation_volume.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ponderation_volume_inter" class="control-label">ponderation_volume_inter</label>
+          <input id="ponderation_volume_inter" formControlName="ponderation_volume_inter" class="form-control" type="text" required>
+          <div *ngIf="ponderation_volume_inter.invalid" class="alert alert-danger">
+            <div *ngIf="ponderation_volume_inter.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ponderation_difference_ext" class="control-label">ponderation_difference_ext</label>
+          <input id="ponderation_difference_ext" formControlName="ponderation_difference_ext" class="form-control" type="text" required>
+          <div *ngIf="ponderation_difference_ext.invalid" class="alert alert-danger">
+            <div *ngIf="ponderation_difference_ext.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="maxwid" class="control-label">maxwid</label>
+          <input id="maxwid" formControlName="maxwid" class="form-control" type="text" required>
+          <div *ngIf="maxwid.invalid" class="alert alert-danger">
+            <div *ngIf="maxwid.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="minwid" class="control-label">minwid</label>
+          <input id="minwid" formControlName="minwid" class="form-control" type="text" required>
+          <div *ngIf="minwid.invalid" class="alert alert-danger">
+            <div *ngIf="minwid.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="minlen" class="control-label">minlen</label>
+          <input id="minlen" formControlName="minlen" class="form-control" type="text" required>
+          <div *ngIf="minlen.invalid" class="alert alert-danger">
+            <div *ngIf="minlen.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="maxlen" class="control-label">maxlen</label>
+          <input id="maxlen" formControlName="maxlen" class="form-control" type="text" required>
+          <div *ngIf="maxlen.invalid" class="alert alert-danger">
+            <div *ngIf="maxlen.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="minheight" class="control-label">minheight</label>
+          <input id="minheight" formControlName="minheight" class="form-control" type="text" required>
+          <div *ngIf="minheight.invalid" class="alert alert-danger">
+            <div *ngIf="minheight.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="maxheight" class="control-label">maxheight</label>
+          <input id="maxheight" formControlName="maxheight" class="form-control" type="text" required>
+          <div *ngIf="maxheight.invalid" class="alert alert-danger">
+            <div *ngIf="maxheight.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="amplitudeMove" class="control-label">amplitudeMove</label>
+          <input id="amplitudeMove" formControlName="amplitudeMove" class="form-control" type="text" required>
+          <div *ngIf="amplitudeMove.invalid" class="alert alert-danger">
+            <div *ngIf="amplitudeMove.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="amplitudeMaxDim" class="control-label">amplitudeMaxDim</label>
+          <input id="amplitudeMaxDim" formControlName="amplitudeMaxDim" class="form-control" type="text" required>
+          <div *ngIf="amplitudeMaxDim.invalid" class="alert alert-danger">
+            <div *ngIf="amplitudeMaxDim.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="amplitudeHeight" class="control-label">amplitudeHeight</label>
+          <input id="amplitudeHeight" formControlName="amplitudeHeight" class="form-control" type="text" required>
+          <div *ngIf="amplitudeHeight.invalid" class="alert alert-danger">
+            <div *ngIf="amplitudeHeight.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="amplitudeRotate" class="control-label">amplitudeRotate</label>
+          <input id="amplitudeRotate" formControlName="amplitudeRotate" class="form-control" type="text" required>
+          <div *ngIf="amplitudeRotate.invalid" class="alert alert-danger">
+            <div *ngIf="amplitudeRotate.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="temp" class="control-label">temp</label>
+          <input id="temp" formControlName="temp" class="form-control" type="text" required>
+          <div *ngIf="temp.invalid" class="alert alert-danger">
+            <div *ngIf="temp.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="deccoef" class="control-label">deccoef</label>
+          <input id="deccoef" formControlName="deccoef" class="form-control" type="text" required>
+          <div *ngIf="deccoef.invalid" class="alert alert-danger">
+            <div *ngIf="deccoef.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="poisson" class="control-label">poisson</label>
+          <input id="poisson" formControlName="poisson" class="form-control" type="text" required>
+          <div *ngIf="poisson.invalid" class="alert alert-danger">
+            <div *ngIf="poisson.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pbirth" class="control-label">pbirth</label>
+          <input id="pbirth" formControlName="pbirth" class="form-control" type="text" required>
+          <div *ngIf="pbirth.invalid" class="alert alert-danger">
+            <div *ngIf="pbirth.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pdeath" class="control-label">pdeath</label>
+          <input id="pdeath" formControlName="pdeath" class="form-control" type="text" required>
+          <div *ngIf="pdeath.invalid" class="alert alert-danger">
+            <div *ngIf="pdeath.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="end_test_type" class="control-label">end_test_type</label>
+          <input id="end_test_type" formControlName="end_test_type" class="form-control" type="text" required>
+          <div *ngIf="end_test_type.invalid" class="alert alert-danger">
+            <div *ngIf="end_test_type.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="delta" class="control-label">delta</label>
+          <input id="delta" formControlName="delta" class="form-control" type="text" required>
+          <div *ngIf="delta.invalid" class="alert alert-danger">
+            <div *ngIf="delta.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="relative_nb_iter" class="control-label">relative_nb_iter</label>
+          <input id="relative_nb_iter" formControlName="relative_nb_iter" class="form-control" type="text" required>
+          <div *ngIf="relative_nb_iter.invalid" class="alert alert-danger">
+            <div *ngIf="relative_nb_iter.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="absolute_nb_iter" class="control-label">absolute_nb_iter</label>
+          <input id="absolute_nb_iter" formControlName="absolute_nb_iter" class="form-control" type="text" required>
+          <div *ngIf="absolute_nb_iter.invalid" class="alert alert-danger">
+            <div *ngIf="absolute_nb_iter.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="result" class="control-label">result</label>
+          <input id="result" formControlName="result" class="form-control" type="text" required>
+          <div *ngIf="result.invalid" class="alert alert-danger">
+            <div *ngIf="result.errors">
+              Champ obligatoire
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="alert alert-danger" *ngIf="hasError">
+    {{errorMessage}}
+  </div>
+</div>
