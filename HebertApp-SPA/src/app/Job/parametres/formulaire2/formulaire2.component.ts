@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Formulaire2 } from '../../models/formulaire2';
 
 @Component({
   selector: 'app-formulaire2',
@@ -8,7 +9,13 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class Formulaire2Component implements OnInit {
   @Input() parametre: string;
+  @Output() sent = new EventEmitter<string>();
+
   form: FormGroup;
+  hasError = false;
+  errorMessage: string;
+  formulaire2 = new Formulaire2();
+
 
   constructor(fb: FormBuilder) {
     this.form = fb.group({
@@ -93,5 +100,42 @@ export class Formulaire2Component implements OnInit {
   get result() {return this.form.get('result'); }
 
   ngOnInit() {}
-  save() {}
+
+  save() {
+    if (this.form.valid) {
+      const newFormulaire2 = new Formulaire2();
+      newFormulaire2.ponderation_volume = this.form.value.ponderation_volume;
+      newFormulaire2.ponderation_volume_inter = this.form.value.ponderation_volume_inter;
+      newFormulaire2.ponderation_difference_ext = this.form.value.ponderation_difference_ext;
+      newFormulaire2.l1min = this.form.value.l1min;
+      newFormulaire2.l1max = this.form.value.l1max;
+      newFormulaire2.l2min = this.form.value.l2min;
+      newFormulaire2.l2max = this.form.value.l2max;
+      newFormulaire2.h1min = this.form.value.h1min;
+      newFormulaire2.h1max = this.form.value.h1max;
+      newFormulaire2.h2min = this.form.value.h2min;
+      newFormulaire2.h2max = this.form.value.h2max;
+      newFormulaire2.heightToTopMin = this.form.value.heightToTopMin;
+      newFormulaire2.heightToTopMax = this.form.value.heightToTopMax;
+      newFormulaire2.heightgutterMin = this.form.value.heightgutterMin;
+      newFormulaire2.geightgutterMax = this.form.value.geightgutterMax;
+      newFormulaire2.shiftMin = this.form.value.shiftMin;
+      newFormulaire2.shiftMax = this.form.value.shiftMax;
+      newFormulaire2.temp = this.form.value.temp;
+      newFormulaire2.deccoef = this.form.value.deccoef;
+      newFormulaire2.poisson = this.form.value.poisson;
+      newFormulaire2.pbirth = this.form.value.pbirth;
+      newFormulaire2.pdeath = this.form.value.pdeath;
+      newFormulaire2.end_test_type = this.form.value.end_test_type;
+      newFormulaire2.delta = this.form.value.delta;
+      newFormulaire2.relative_nb_iter = this.form.value.relative_nb_iter;
+      newFormulaire2.absolute_nb_iter = this.form.value.absolute_nb_iter;
+      newFormulaire2.result = this.form.value.result;
+
+      const json = JSON.stringify(newFormulaire2);
+      this.sent.emit(json);
+    } else {
+      this.hasError = true;
+    }
+  }
 }
