@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <br />
+  <h4 style="text-align: center; margin-right: 3%">Details du job</h4>
+  <hr />
+  <div class="row">
+    <div class="ml-auto mr-auto">
+      <p>Date Début: {{ job.dateDebut }}</p>
+      <p>Date Fin: {{ job.dateFin }}</p>
+      <p>Chemin SHP: {{ job.cheminShp }}</p>
+      <p>Paramètres: {{ job.parametres }}</p>
+      <p>Statut: {{ job.statut }}</p>
+      <p>Chemin: {{ job.chemin }}</p>
+      <p>SHP: {{ job.shp}}</p>
+      <a [routerLink]="['/jobs/edit', job.id]">Modifier</a> 
+      <a [routerLink]="['/jobs']" style="margin-left: 7%">Retour</a>
+      <br />
+      <br />
+      <div class="ml-auto mr-auto">
+        <tr>
+          <td>
+            <button class="btn btn-danger" style="margin-left: 4%" (click)="deleteJob()">
+              Supprimer
+            </button>
+          </td>
+        </tr>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="container">
+  <br />
+  <h2 style="text-align: center">Jobs</h2>
+  <hr>
+  <br />
+  <a [routerLink]="['/jobs/create']">Nouveau Job</a>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>
+          Date_Début
+        </th>
+        <th>
+          Date_Fin
+        </th>
+        <th>
+          Chemin_SHP
+        </th>
+        <th>
+          Paramètres
+        </th>
+        <th>
+          Statut
+        </th>
+        <th>
+          Chemin
+        </th>
+        <th>
+          SHP
+        </th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let job of jobs">
+      <tr [routerLink]="['/jobs/detail', job.id]">
+        <td>
+          {{ job.dateDebut }}
+        </td>
+        <td>
+          {{ job.dateFin }}
+        </td>
+        <td>
+          {{ job.cheminShp }}
+        </td>
+        <td>
+          {{ job.parametres }}
+        </td>
+        <td>
+          {{ job.statut }}
+        </td>
+        <td>
+          {{ job.chemin }}
+        </td>
+        <td>
+          {{ job.shp }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
