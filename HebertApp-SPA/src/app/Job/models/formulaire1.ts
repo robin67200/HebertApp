@@ -26,7 +26,7 @@ export class Formulaire1 {
         public result: string,
         
     ) {
-        this.id = 0;
+        
     }
-    id: number;
+    
 }
